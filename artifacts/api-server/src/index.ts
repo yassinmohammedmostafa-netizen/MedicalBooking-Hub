@@ -10,13 +10,7 @@ console.log(`[ENV] DATABASE_URL: ${process.env.DATABASE_URL}`);
 console.log(`[ENV] RESEND_API_KEY present: ${!!process.env.RESEND_API_KEY}`);
 console.log(`[ENV] SMTP_HOST present: ${!!process.env.SMTP_HOST}`);
 
-const rawPort = process.env["PORT"];
-
-if (!rawPort) {
-  throw new Error(
-    "PORT environment variable is required but was not provided.",
-  );
-}
+const rawPort = process.env["PORT"] || "3001";
 
 const port = Number(rawPort);
 
